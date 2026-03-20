@@ -1,15 +1,14 @@
 function sendMessage() {
     const input = document.getElementById("message");
-    const msg = input.value;
+    const message = input.value;
+    if (!message) return;
 
-    if (!msg) return;
-
-    addMessage(msg, "user");
+    addMessage(message, "user");
 
     fetch('/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: msg })
+        body: JSON.stringify({ message: message })
     })
     .then(res => res.json())
     .then(data => {
@@ -20,24 +19,14 @@ function sendMessage() {
 }
 
 function addMessage(text, type) {
-    const box = document.getElementById("chat-box");
-
+    const chatBox = document.getElementById("chat-box");
     const div = document.createElement("div");
     div.className = "message " + type;
     div.innerText = text;
-
-    box.appendChild(div);
-    box.scrollTop = box.scrollHeight;
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function newChat() {
     document.getElementById("chat-box").innerHTML = "";
-}
-
-function goLogin() {
-    window.location.href = "/login";
-}
-
-function goRegister() {
-    window.location.href = "/register";
 }
