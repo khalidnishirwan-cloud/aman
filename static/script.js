@@ -1,32 +1,17 @@
-function sendMessage() {
-    const input = document.getElementById("message");
-    const message = input.value;
-    if (!message) return;
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
 
-    addMessage(message, "user");
-
-    fetch('/ask', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: message })
-    })
-    .then(res => res.json())
-    .then(data => {
-        addMessage(data.response, "bot");
-    });
-
-    input.value = "";
-}
-
-function addMessage(text, type) {
-    const chatBox = document.getElementById("chat-box");
-    const div = document.createElement("div");
-    div.className = "message " + type;
-    div.innerText = text;
-    chatBox.appendChild(div);
-    chatBox.scrollTop = chatBox.scrollHeight;
+    if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-250px";
+    } else {
+        sidebar.style.left = "0px";
+    }
 }
 
 function newChat() {
-    document.getElementById("chat-box").innerHTML = "";
+    alert("تم بدء دردشة جديدة");
+}
+
+function logout() {
+    window.location.href = "/logout";
 }
