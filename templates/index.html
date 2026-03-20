@@ -2,49 +2,41 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zentra AI</title>
+<title>AMAN AI</title>
 <link rel="stylesheet" href="/static/style.css">
 </head>
-
 <body>
 
-<!-- SIDEBAR -->
-<div id="sidebar" class="sidebar">
-    <button onclick="newChat()">+ دردشة جديدة</button>
-    <button>🔍 بحث</button>
+<div class="sidebar">
+    <button onclick="newChat()">+ محادثة جديدة</button>
 
-    <div class="chats">
-        <p>Chat 1</p>
-        <p>Chat 2</p>
+    <div class="menu">
+        <p>المحادثات</p>
     </div>
 
-    <div class="account">
-        <p>👤 حسابي</p>
-        <button>⚙️ إعدادات</button>
-        <button onclick="logout()">🚪 تسجيل خروج</button>
+    <div class="bottom">
+        <p>{{user}}</p>
+        <a href="/logout">تسجيل الخروج</a>
     </div>
 </div>
 
-<!-- HEADER -->
-<div class="header">
-    <div class="left">
-        <span onclick="toggleSidebar()">☰</span>
-        <span class="logo">Zentra AI</span>
+<div class="main">
+
+    <div class="topbar">
+        AMAN AI
     </div>
-</div>
 
-<!-- CENTER TEXT -->
-<div class="center-text">
-    أنا مستعد عندما تكون أنت كذلك.
-</div>
+    <div id="chat-box" class="chat-box">
+        <div class="welcome">
+            أنا مستعد عندما تكون أنت كذلك.
+        </div>
+    </div>
 
-<!-- CHAT INPUT -->
-<div class="chat-box">
-    <button class="icon">+</button>
-    <input type="text" placeholder="اسأل عن أي شيء...">
-    <button class="icon">🎤</button>
-    <button class="send">⬆</button>
+    <div class="input-box">
+        <input id="message" placeholder="اسأل عن أي شيء...">
+        <button onclick="sendMessage()">↑</button>
+    </div>
+
 </div>
 
 <script src="/static/script.js"></script>
