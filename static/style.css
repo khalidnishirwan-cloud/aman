@@ -1,68 +1,24 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
+/* SIDEBAR */
 .sidebar {
-    width: 200px;
-    float: left;
-    background-color: #f2f2f2;
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
     padding: 20px;
+    transition: 0.3s;
 }
 
 .sidebar button {
-    display: block;
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
 }
 
-.main {
-    margin-left: 200px;
-    padding: 20px;
-}
-
-#chat-box {
-    height: 400px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    overflow-y: scroll;
-    margin-bottom: 10px;
-}
-
-.message.user {
-    text-align: right;
-    margin: 5px;
-    background-color: #dcf8c6;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.message.bot {
-    text-align: left;
-    margin: 5px;
-    background-color: #f1f0f0;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-#message {
+.account {
+    position: absolute;
+    bottom: 20px;
     width: 80%;
-    padding: 10px;
-}
-
-button {
-    padding: 10px 20px;
-}
-.auth-container {
-    width: 300px;
-    margin: 50px auto;
-}
-.auth-container input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
 }
