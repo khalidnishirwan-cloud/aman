@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect, jsonify, session
 import sqlite3
+import os
 
 app = Flask(__name__)
 app.secret_key = "secret123"
 
+# إنشاء قاعدة البيانات
 def init_db():
     conn = sqlite3.connect('users.db')
     c = conn.cursor()
@@ -19,12 +21,14 @@ def init_db():
 
 init_db()
 
+# الصفحة الرئيسية
 @app.route('/')
 def index():
     if "user" not in session:
         return redirect('/login')
     return render_template('index.html', user=session["user"])
 
+# إنشاء حساب
 @app.route('/register', methods=['GET','POST'])
 def register():
     if request.method == 'POST':
@@ -41,6 +45,7 @@ def register():
 
     return render_template('register.html')
 
+# تسجيل الدخول
 @app.route('/login', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
@@ -57,20 +62,24 @@ def login():
             session["user"] = email
             return redirect('/')
         else:
-            return "خطأ"
+            return "بيانات غير صحيحة"
 
     return render_template('login.html')
 
+# تسجيل الخروج
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect('/login')
 
+# الدردشة
 @app.route('/ask', methods=['POST'])
 def ask():
     data = request.get_json()
     msg = data.get("message")
     return jsonify({"response": "🤖 " + msg})
 
+# تشغيل السيرفر (مهم لـ Railway)
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
