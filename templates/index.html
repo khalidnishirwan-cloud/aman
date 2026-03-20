@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <title>Zentra AI</title>
-    <link rel="stylesheet" href="/static/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zentra AI</title>
+<link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
-    <div class="sidebar">
-        <button onclick="newChat()">New Chat</button>
-        <button onclick="window.location.href='/logout'">Logout</button>
-        <p>{% if email %}مرحبًا، {{ email }}!{% endif %}</p>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+    <button onclick="newChat()">+ دردشة جديدة</button>
+    <button>🔍 بحث</button>
+
+    <div class="chats">
+        <p>Chat 1</p>
+        <p>Chat 2</p>
     </div>
 
-    <div class="main">
-        <div id="chat-box"></div>
-        <input type="text" id="message" placeholder="اكتب رسالتك هنا...">
-        <button onclick="sendMessage()">إرسال</button>
+    <div class="account">
+        <p>👤 حسابي</p>
+        <button>⚙️ إعدادات</button>
+        <button onclick="logout()">🚪 تسجيل خروج</button>
     </div>
+</div>
 
-    <script src="/static/script.js"></script>
+<!-- HEADER -->
+<div class="header">
+    <div class="left">
+        <span onclick="toggleSidebar()">☰</span>
+        <span class="logo">Zentra AI</span>
+    </div>
+</div>
+
+<!-- CENTER TEXT -->
+<div class="center-text">
+    أنا مستعد عندما تكون أنت كذلك.
+</div>
+
+<!-- CHAT INPUT -->
+<div class="chat-box">
+    <button class="icon">+</button>
+    <input type="text" placeholder="اسأل عن أي شيء...">
+    <button class="icon">🎤</button>
+    <button class="send">⬆</button>
+</div>
+
+<script src="/static/script.js"></script>
+
 </body>
 </html>
