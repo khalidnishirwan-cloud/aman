@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial;
     background: #f7f7f8;
+    direction: rtl;
 }
 
 /* HEADER */
@@ -15,13 +16,15 @@ body {
 
 .left {
     font-weight: bold;
+    font-size: 18px;
 }
 
 .plus {
-    background: #e6e6ff;
+    background: #eaeaff;
     border: none;
     padding: 8px 15px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 /* CENTER */
@@ -54,6 +57,7 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
+    gap: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
