@@ -3,43 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <title>AMAN AI</title>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="sidebar">
-    <button onclick="newChat()">+ محادثة جديدة</button>
-
-    <div class="menu">
-        <p>المحادثات</p>
+<!-- HEADER -->
+<div class="header">
+    <div class="left">
+        ☰ ChatGPT
     </div>
-
-    <div class="bottom">
-        <p>{{user}}</p>
-        <a href="/logout">تسجيل الخروج</a>
+    <div class="right">
+        <button class="plus">✨ اشترك في Plus</button>
     </div>
 </div>
 
-<div class="main">
+<!-- CENTER -->
+<div class="center">
+    <h1>أنا مستعد عندما تكون أنت كذلك.</h1>
+</div>
 
-    <div class="topbar">
-        AMAN AI
-    </div>
-
-    <div id="chat-box" class="chat-box">
-        <div class="welcome">
-            أنا مستعد عندما تكون أنت كذلك.
-        </div>
-    </div>
-
+<!-- INPUT -->
+<div class="input-container">
     <div class="input-box">
-        <input id="message" placeholder="اسأل عن أي شيء...">
-        <button onclick="sendMessage()">↑</button>
+        <span>＋</span>
+        <input placeholder="اسأل عن أي شيء...">
+        <button>🎤</button>
+        <button class="send">↑</button>
     </div>
-
 </div>
-
-<script src="/static/script.js"></script>
 
 </body>
 </html>
