@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Zentra AI</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
 
+<body>
+
+<div class="top-bar">
+    <button onclick="newChat()">محادثة جديدة</button>
+    <button onclick="goLogin()">تسجيل دخول</button>
+    <button onclick="goRegister()">إنشاء حساب</button>
+</div>
+
+<div class="container">
+    <div id="chat-box"></div>
+
+    <div class="input-box">
+        <input type="text" id="message" placeholder="اكتب رسالتك...">
+        <button onclick="sendMessage()">إرسال</button>
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
