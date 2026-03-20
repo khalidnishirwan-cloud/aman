@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<title>إنشاء حساب</title>
-<link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <title>إنشاء حساب - Zentra AI</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
-
 <body>
-
-<div class="container">
-    <h2>إنشاء حساب</h2>
-
-    <form method="POST">
-        <input type="email" name="email" placeholder="الايميل" required>
-        <input type="password" name="password" placeholder="كلمة المرور" required>
-        <button type="submit">تسجيل</button>
-    </form>
-
-    <a href="/login">لديك حساب؟ تسجيل الدخول</a>
-</div>
-
+    <div class="auth-container">
+        <h2>إنشاء حساب جديد</h2>
+        <form method="POST">
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+            <input type="password" name="password" placeholder="كلمة المرور" required>
+            <button type="submit">تسجيل</button>
+        </form>
+        <p>لديك حساب؟ <a href="/login">تسجيل الدخول</a></p>
+    </div>
 </body>
 </html>
